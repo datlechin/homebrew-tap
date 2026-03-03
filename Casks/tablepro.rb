@@ -14,6 +14,10 @@ cask "tablepro" do
 
   app "TablePro.app"
 
+  postflight do
+    system "xattr", "-cr", "#{appdir}/TablePro.app"
+  end
+
   zap trash: [
     "~/Library/Application Support/TablePro",
     "~/Library/Preferences/com.TablePro.plist",
