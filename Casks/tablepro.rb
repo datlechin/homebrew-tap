@@ -20,6 +20,8 @@ cask "tablepro" do
 
   zap trash: [
     "~/Library/Application Support/TablePro",
+    "~/Library/Caches/com.TablePro",
+    "~/Library/HTTPStorages/com.TablePro",
     "~/Library/Preferences/com.TablePro.plist",
   ]
 end
