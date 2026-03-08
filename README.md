@@ -1,11 +1,11 @@
-# Homebrew Tap for TablePro
+# Homebrew Tap for TablePro (Archived)
 
-This tap contains the [Homebrew](https://brew.sh) cask formula for [TablePro](https://github.com/datlechin/TablePro), a native macOS database client.
+> **This tap has been archived.** TablePro is now available in the official [Homebrew Cask](https://github.com/Homebrew/homebrew-cask) repository.
 
 ## Install
 
 ```bash
-brew install datlechin/tap/tablepro
+brew install --cask tablepro
 ```
 
 ## Update
