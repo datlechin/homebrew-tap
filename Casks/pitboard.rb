@@ -3,8 +3,8 @@
 # The download is the notarised build from the release, so Gatekeeper accepts it with no
 # further step. Sparkle keeps it up to date afterwards, which is why auto_updates is set.
 cask "pitboard" do
-  version "0.1.2"
-  sha256 "b556d0983206d455fda28f1561e58e4f30cae5f8c9b706ba665fc52674c61769"
+  version "0.1.4"
+  sha256 "12550acba173b6b70791090dab6f39396ba48b6409ac7bfa661bf1ccae96b782"
 
   url "https://github.com/datlechin/pitboard/releases/download/v#{version}/Pitboard-v#{version}-macos.zip"
   name "pitboard"
