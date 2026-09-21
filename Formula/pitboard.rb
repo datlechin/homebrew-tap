@@ -6,8 +6,8 @@
 class Pitboard < Formula
   desc "Park and restore your own Claude Code logins"
   homepage "https://github.com/datlechin/pitboard"
-  url "https://github.com/datlechin/pitboard/archive/refs/tags/v0.1.4.tar.gz"
-  sha256 "2dfdcb0df5c0bc1f8c61046072ad39f71b2bfd31f93d4672169821d3168c972c"
+  url "https://github.com/datlechin/pitboard/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "913bb3d08d210000888d61acb2596a089c50086dc8116d8bad07a97da690ce94"
   license "Apache-2.0"
 
   depends_on "rust" => :build
