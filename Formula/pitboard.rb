@@ -1,13 +1,18 @@
 # Homebrew formula for the tap datlechin/homebrew-tap.
 #
-# It builds from source on purpose. The released binaries are signed ad hoc, and a local
-# build carries no quarantine flag at all. Update url, sha256 and version on each release
-# with packaging/update-tap.sh.
+# This is the template. The release's `tap` job writes the version and the checksum into it
+# and commits the result to the tap, so the two lines below are never the ones anybody
+# installs and this file makes no claim about any release. The checksum it writes is the
+# line the release put in SHA256SUMS, over the source tarball it published itself.
+#
+# It builds from source, so one formula serves Linux and both macOS architectures without a
+# bottle for each.
 class Pitboard < Formula
   desc "Park and restore your own Claude Code logins"
-  homepage "https://github.com/datlechin/pitboard"
-  url "https://github.com/datlechin/pitboard/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "913bb3d08d210000888d61acb2596a089c50086dc8116d8bad07a97da690ce94"
+  homepage "https://usepitboard.com"
+  version "0.3.0"
+  url "https://github.com/datlechin/pitboard/releases/download/v#{version}/pitboard-v#{version}-source.tar.gz"
+  sha256 "15e2d70ed86d577a23d470a510ef6e233a3127e1ed9267fcb5dc368a62581eb4"
   license "Apache-2.0"
 
   depends_on "rust" => :build
