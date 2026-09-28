@@ -10,11 +10,11 @@ cask "pitboard" do
   arch arm: "aarch64", intel: "x86_64"
   os macos: "apple-darwin", linux: "unknown-linux-musl"
 
-  version "0.4.1"
-  sha256 arm:          "56a99c1e56f22864be7153b9cd7085bafd088e1d53516e080adc24656d1be7dd",
-         intel:        "219e53aac1b010d144cc34e580106bfed9b09595b460e0aeca70082343407b40",
-         arm64_linux:  "cb5f5ac56ee1f4bcc42622049144fe39e58d9dfb87a3de85186a3dbdf48717ad",
-         x86_64_linux: "a6ca5f65a05dddb572cd3c5e2a13eefec2d69e153c7b3779ddd577976592b914"
+  version "0.5.0"
+  sha256 arm:          "7b75697e06aeba1a79a6217d30489c8ea480562f8adca6c0a75a505da1bc1d44",
+         intel:        "049bd0a8edc0f7547991211bfd248cb87761c4b145ab173b8558f7113a2bbe7e",
+         arm64_linux:  "e33116452b841d8b3d9f10ba07974803b497513577b5a2b598b6f528fccb796a",
+         x86_64_linux: "9e1c4b7fd472e9ba797cf6517e57a080bc3f47072102e5429faa6793ec561be2"
 
   # The renewal schedule, the launchd job on macOS and the systemd timer on Linux. In zap
   # and not uninstall, because Homebrew runs uninstall on every upgrade and reinstall too.
