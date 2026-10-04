@@ -10,8 +10,8 @@
 # completions, and this links them where the pitboard cask would. They are paths into the
 # bundle, so a Sparkle update moves the command line with the app.
 cask "pitboard-app" do
-  version "0.6.0"
-  sha256 "c799a087eba2257010527eb14180e878f1bf15cccfc32f7799ed1a833feaab94"
+  version "0.7.0"
+  sha256 "7c63e84d1eecec5976e416ac0b26f72f00827ecdb1d98f875a37948ede700dd7"
 
   url "https://github.com/datlechin/pitboard/releases/download/v#{version}/Pitboard-v#{version}-macos.zip"
   name "pitboard"
@@ -33,12 +33,23 @@ cask "pitboard-app" do
   # upgrade and reinstall too. ~/.pitboard stays: it is the only index of the parked logins,
   # and without it they are left where nothing can name them. `pitboard uninstall` deletes
   # the logins and then the directory, so it has to come first.
+  #
+  # ~/Library/WebKit/com.usepitboard.Pitboard holds each account window's data, its
+  # claude.ai or chatgpt.com sign-in included. The preferences list the stores each pitboard
+  # directory made (webStores) and each window's last page (windowPages), and the saved
+  # application state keeps the windows that were open. The Share extension's container and
+  # scripts folder are made by macOS the first time the extension runs, and hold nothing
+  # pitboard writes.
   zap launchctl: "com.datlechin.pitboard.renew",
       trash:     [
+        "~/Library/Application Scripts/com.usepitboard.Pitboard.share",
         "~/Library/Application Support/com.usepitboard.Pitboard",
         "~/Library/Caches/com.usepitboard.Pitboard",
+        "~/Library/Containers/com.usepitboard.Pitboard.share",
         "~/Library/HTTPStorages/com.usepitboard.Pitboard",
         "~/Library/HTTPStorages/com.usepitboard.Pitboard.binarycookies",
         "~/Library/Preferences/com.usepitboard.Pitboard.plist",
+        "~/Library/Saved Application State/com.usepitboard.Pitboard.savedState",
+        "~/Library/WebKit/com.usepitboard.Pitboard",
       ]
 end
