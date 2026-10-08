@@ -1,6 +1,6 @@
 # Homebrew cask for the menu bar app, in the tap datlechin/homebrew-tap.
 #
-# pitboard's release writes the tap's copy from packaging/pitboard-app.rb in
+# Pitboard's release writes the tap's copy from packaging/pitboard-app.rb in
 # datlechin/pitboard the way it writes pitboard.rb, in the same commit, so the pair cannot
 # be half updated. An edit made to the tap's copy is replaced at the next release. The
 # download is the notarised build from the release, so Gatekeeper accepts it with no further
@@ -10,11 +10,11 @@
 # completions, and this links them where the pitboard cask would. They are paths into the
 # bundle, so a Sparkle update moves the command line with the app.
 cask "pitboard-app" do
-  version "0.7.0"
-  sha256 "7c63e84d1eecec5976e416ac0b26f72f00827ecdb1d98f875a37948ede700dd7"
+  version "0.8.0"
+  sha256 "d7944c50c2b65ce1749b469c569aee0eb97322cb9c88ed2f04127d16b6a8cba8"
 
   url "https://github.com/datlechin/pitboard/releases/download/v#{version}/Pitboard-v#{version}-macos.zip"
-  name "pitboard"
+  name "Pitboard"
   desc "Menu bar view of Claude Code and Codex account limits, and one click to switch"
   homepage "https://usepitboard.com/"
 
@@ -35,11 +35,11 @@ cask "pitboard-app" do
   # the logins and then the directory, so it has to come first.
   #
   # ~/Library/WebKit/com.usepitboard.Pitboard holds each account window's data, its
-  # claude.ai or chatgpt.com sign-in included. The preferences list the stores each pitboard
+  # claude.ai or chatgpt.com sign-in included. The preferences list the stores each Pitboard
   # directory made (webStores) and each window's last page (windowPages), and the saved
   # application state keeps the windows that were open. The Share extension's container and
   # scripts folder are made by macOS the first time the extension runs, and hold nothing
-  # pitboard writes.
+  # Pitboard writes.
   zap launchctl: "com.datlechin.pitboard.renew",
       trash:     [
         "~/Library/Application Scripts/com.usepitboard.Pitboard.share",

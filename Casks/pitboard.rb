@@ -1,6 +1,6 @@
 # Homebrew cask for the command line on macOS and Linux, in the tap datlechin/homebrew-tap.
 #
-# pitboard's release writes the tap's copy from packaging/pitboard.rb in datlechin/pitboard,
+# Pitboard's release writes the tap's copy from packaging/pitboard.rb in datlechin/pitboard,
 # with the version and the checksums from the release's SHA256SUMS filled in. An edit made
 # to the tap's copy is replaced at the next release.
 #
@@ -10,11 +10,11 @@ cask "pitboard" do
   arch arm: "aarch64", intel: "x86_64"
   os macos: "apple-darwin", linux: "unknown-linux-musl"
 
-  version "0.7.0"
-  sha256 arm:          "063ab5086b28fb6e51ac217081011f04440741890f70e59fc828c7f86c440b59",
-         intel:        "6ff2cb80a6ca476c1a4aba563ba3e9fd9a359f9346b87a68c600101699063308",
-         arm64_linux:  "7d76f4cdc82942a7121d21a7c03f5dd4329db8cdb8c852d5a21857650a12425f",
-         x86_64_linux: "843e89e248821f9e57742404f1d1164bd36af4aa133566e2e879a1dd74661882"
+  version "0.8.0"
+  sha256 arm:          "319273c3aa791ebfc33d848ecf77455c161bd4327b53df319d12729ccfd76973",
+         intel:        "136bd5ef02162af511bc42c6943eb4fd06765e8c96e97f7f73accb675e1fc043",
+         arm64_linux:  "2113a0fa9388fa1a140e728663a74ef1c1e645000b19685eb2302886f35793d9",
+         x86_64_linux: "5ebc10a6d3464ddddc0c5dacedf812bc6da75b0e5cc465f173214e79310b1c65"
 
   # The renewal schedule, the launchd job on macOS and the systemd timer on Linux. In zap
   # and not uninstall, because Homebrew runs uninstall on every upgrade and reinstall too.
@@ -46,7 +46,7 @@ cask "pitboard" do
   end
 
   url "https://github.com/datlechin/pitboard/releases/download/v#{version}/pitboard-v#{version}-#{arch}-#{os}.tar.gz"
-  name "pitboard"
+  name "Pitboard"
   desc "Park and restore your own Claude Code and Codex logins"
   homepage "https://usepitboard.com/"
 
@@ -67,7 +67,7 @@ cask "pitboard" do
       brew install --cask datlechin/tap/pitboard-app
     The second line removes 0.3.0's formula if it is still there, and does nothing if not.
 
-    To remove pitboard with the logins it parked, run `pitboard uninstall` before
+    To remove Pitboard with the logins it parked, run `pitboard uninstall` before
     `brew uninstall`.
   EOS
 end
