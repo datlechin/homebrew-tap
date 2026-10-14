@@ -10,11 +10,11 @@ cask "pitboard" do
   arch arm: "aarch64", intel: "x86_64"
   os macos: "apple-darwin", linux: "unknown-linux-musl"
 
-  version "0.13.0"
-  sha256 arm:          "67d9fa1dedc3d5bdc1a999152bd640d40f9894fcb4bee4441266852d6d486a06",
-         intel:        "491086f38efde5883f50d265f2335f111717be68b5c648ec965162fc0cf76cc9",
-         arm64_linux:  "0fee87c94a13b1c405e3bc5a524595425ff73a6049f60b4c5455524c42866d6c",
-         x86_64_linux: "15f94b55814b014db3f99ce5823a7209baeb91ae45a2283b88b557298f8ba7bc"
+  version "0.14.0"
+  sha256 arm:          "712733f4ea7628d7131b0d3c94b9a52c0f06c6dd9911a5d390cc286602b2f334",
+         intel:        "a532e8d503a87575adbdb5c92ac8b45eaa81a1d6bc3e3aed50d652bd1c472664",
+         arm64_linux:  "ec0771e0639ba55b85aab23485ca2385879e27746c17f54e4cf5328643dcbee1",
+         x86_64_linux: "6693e79975e3ac91d20e952f3476a2d994b48de926120907db6d1e4bfe6fe7c7"
 
   # The renewal schedule, the launchd job on macOS and the systemd timer on Linux. In zap
   # and not uninstall, because Homebrew runs uninstall on every upgrade and reinstall too.
@@ -47,10 +47,11 @@ cask "pitboard" do
 
   url "https://github.com/datlechin/pitboard/releases/download/v#{version}/pitboard-v#{version}-#{arch}-#{os}.tar.gz"
   name "Pitboard"
-  desc "Park and restore your own Claude Code and Codex logins"
+  desc "Switch Claude Code, Codex and Claude Desktop between your own accounts"
   homepage "https://usepitboard.com/"
 
-  # The app carries this same command line and links it to the same place.
+  # The app carries this same command line and links it to the same place. Homebrew 7.0.6 has
+  # no conflicts_with formula:, so 0.3.0's formula cannot be named here.
   conflicts_with cask: "pitboard-app"
 
   binary "pitboard-v#{version}-#{arch}-#{os}/pitboard"
@@ -61,11 +62,11 @@ cask "pitboard" do
 
   caveats <<~EOS
     On macOS the menu bar app is the pitboard-app cask, and it includes this command line.
-    To switch to it, or to get back an app the old pitboard cask installed:
+    To switch to it:
       brew uninstall --cask pitboard
-      brew uninstall --formula --force pitboard
       brew install --cask datlechin/tap/pitboard-app
-    The second line removes 0.3.0's formula if it is still there, and does nothing if not.
+    If this replaced an app the old pitboard cask installed, see
+    https://docs.usepitboard.com/install/upgrade-from-0-3-0
 
     To remove Pitboard with the logins it parked, run `pitboard uninstall` before
     `brew uninstall`.

@@ -10,12 +10,12 @@
 # completions, and this links them where the pitboard cask would. They are paths into the
 # bundle, so a Sparkle update moves the command line with the app.
 cask "pitboard-app" do
-  version "0.13.0"
-  sha256 "601639bc4fa9fefffd52e2965301138c61c3888d47fc13de0c27d8bd77d4e1ae"
+  version "0.14.0"
+  sha256 "d64552a8d408e9e655840f3c157ed583227fdd292eb378b71a44161c7f360118"
 
   url "https://github.com/datlechin/pitboard/releases/download/v#{version}/Pitboard-v#{version}-macos.zip"
   name "Pitboard"
-  desc "Menu bar view of Claude Code and Codex account limits, and one click to switch"
+  desc "Menu bar app to switch Claude Code and Codex accounts and see their limits"
   homepage "https://usepitboard.com/"
 
   auto_updates true
