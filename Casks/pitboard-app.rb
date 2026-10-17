@@ -10,8 +10,8 @@
 # completions, and this links them where the pitboard cask would. They are paths into the
 # bundle, so a Sparkle update moves the command line with the app.
 cask "pitboard-app" do
-  version "0.14.0"
-  sha256 "d64552a8d408e9e655840f3c157ed583227fdd292eb378b71a44161c7f360118"
+  version "0.15.0"
+  sha256 "7df8a0f6fb7357ebbc8815c450fe1b68bdc1f0305569be44cf8c96c718db51c6"
 
   url "https://github.com/datlechin/pitboard/releases/download/v#{version}/Pitboard-v#{version}-macos.zip"
   name "Pitboard"
